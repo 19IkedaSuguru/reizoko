@@ -11,4 +11,8 @@ class FoodController extends Controller
     {
         return view('food.save');
     }
+    public function exist()
+    {
+        return view('food.exist');
+    }
 }
