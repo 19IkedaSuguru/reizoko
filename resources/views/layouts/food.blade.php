@@ -21,7 +21,7 @@
         {{-- Styles Laravel標準css--}}
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         {{-- 自作cssの読み込み--}}
-        <link href="{{ secure_asset('css/food.css') }}" rel="stylesheet">>
+        <link href="{{ secure_asset('css/food.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">

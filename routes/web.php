@@ -19,7 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group([], function(){
+Route::group(['middleware' => 'auth'], function(){
     Route::get('food/save', 'FoodController@add');
-    Route::get('food/exist', 'FoodController@add');
+    Route::post('food/save', 'FoodController@create');
+    Route::post('food/exist', 'FoodController@exist');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -8,7 +8,7 @@
        <div class="row">
            <div class="col-md-8 mx-auto">
                <h2>食材保存画面</h2>
-       　　　　 <P>購入した食材を入力してください</p>
+               <p>購入した食材を入力してください</p>
        　　 </div>
       　</div>
   　</div>

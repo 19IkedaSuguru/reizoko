@@ -7,8 +7,8 @@
    <div class="container">
        <div class="row">
            <div class="col-md-8 mx-auto">
-               <h1>食材確認画面</h1>
-               <P>保存している食材</p>>
+               <h2>食材確認画面</h2>
+               <P>保存している食材</p>
        　　 </div>
       　</div>
   　</div>

@@ -11,6 +11,12 @@ class FoodController extends Controller
     {
         return view('food.save');
     }
+    
+    //?
+    public function create(Request $request)
+    {   
+        return redirect('food/create');
+    }
     public function exist()
     {
         return view('food.exist');
