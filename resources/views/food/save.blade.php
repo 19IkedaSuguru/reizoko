@@ -9,6 +9,8 @@
            <div class="col-md-8 mx-auto">
                <h2>食材保存画面</h2>
                <p>購入した食材を入力してください</p>
+               {{-- 不明点１ --}}
+               <form action="{{ action('FoodController@create') }}" method="post" enctype="multipart/form-date">
        　　 </div>
       　</div>
   　</div>
