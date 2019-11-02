@@ -19,6 +19,7 @@ class CreateFoodTable extends Migration
             $table->string('name');
             $table->date('limit_date');
             $table->date('purchase_date');
+             $table->string('body');  // メモを保存するカラム
         });
     }
 

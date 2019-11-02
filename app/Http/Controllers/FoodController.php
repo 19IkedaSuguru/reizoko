@@ -15,7 +15,7 @@ class FoodController extends Controller
     //?
     public function create(Request $request)
     {   
-        return redirect('food/create');
+        return redirect('food.create');
     }
     public function exist()
     {

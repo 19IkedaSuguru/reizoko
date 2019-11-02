@@ -19,29 +19,27 @@
                     </ul>
                   @endif
                   {{-- 表示部分 --}}
-                  <form class="form-line">
-                     <label for="name">食品</label>
-                        <input type="text" class="form-control" name="name" value="{{ old('name') }}">
-                  </form>
-                     
-                  {{-- 疑問2 ラジオボタンにした時、valueはold('limit_date')にするのか？違うのであればどう書けばよいか？forもわからない --}}
-                  <form class="form-line">
-                    <label class="my-1 mr-2" for="inlineFormCustomSelect">賞味期限or購入日</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelect">
-                        <option selected>選択</option>
-                        <option value="{{ old('limit_date') }}">賞味期限：</option>
-                        <option value="{{ old('purchase_date') }}">購入日：</option>
-                  </form>
-                        
-  </select>
-  <div class="custom-control custom-checkbox my-1 mr-sm-2">
-    <input type="checkbox" class="custom-control-input" id="customControlInline">
-    <label class="custom-control-label" for="customControlInline">好みを記憶する</label>
-  </div>
-  <button type="submit" class="btn btn-primary my-1">送信</button>
-                  
-                  
-                  
+                  <div class="form-group row">
+                        <label class="col-md-2">食品名</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                        </div>
+                  </div>
+                  <div class="form-group row">
+                        <label class="col-md-2">賞味期限・消費期限・購入日</label>
+                        <div class="col-md-10">
+                          <input type="text" class="form-control" name="limit_date" value="{{ old('limit_date') }}">
+                        </div>
+                  </div>
+                  <div class="form-group row">
+                        <label class="col-md-2">メモ</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="memo" rows="3">{{ old('memo') }}</textarea>
+                        </div>
+                  </div>
+                  {{ csrf_field() }}
+                  <input type="submit" class="bin btn-primary" value="更新">
+               </form>
        　　 </div>
       　</div>
   　</div>
