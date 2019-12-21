@@ -22,7 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'auth'], function(){
     Route::get('food/save', 'FoodController@add');
     Route::post('food/save', 'FoodController@create');
-    Route::post('food/exist', 'FoodController@exist');
+    Route::get('food/exist', 'FoodController@exist');
 });
 
 Auth::routes();

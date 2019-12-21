@@ -13,13 +13,14 @@ class CreateFoodTable extends Migration
      */
     public function up()
     {
-        Schema::create('food', function (Blueprint $table) {
+        Schema::create('foods', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
             $table->string('name');
             $table->date('limit_date');
             $table->date('purchase_date');
-             $table->string('body');  // メモを保存するカラム
+            $table->string('body');  // メモを保存するカラム
+            $table->timestamps();
         });
     }
 
@@ -30,6 +31,6 @@ class CreateFoodTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('food');
+        Schema::dropIfExists('foods');
     }
 }

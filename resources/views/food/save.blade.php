@@ -26,15 +26,21 @@
                         </div>
                   </div>
                   <div class="form-group row">
-                        <label class="col-md-2">賞味期限・消費期限・購入日</label>
+                        <label class="col-md-2">賞味期限</label>
                         <div class="col-md-10">
                           <input type="text" class="form-control" name="limit_date" value="{{ old('limit_date') }}">
+                        </div>
+                  </div>
+                   <div class="form-group row">
+                        <label class="col-md-2">購入日</label>
+                        <div class="col-md-10">
+                          <input type="text" class="form-control" name="purchase_date" value="{{ old('purchase_date') }}">
                         </div>
                   </div>
                   <div class="form-group row">
                         <label class="col-md-2">メモ</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="memo" rows="3">{{ old('memo') }}</textarea>
+                            <textarea class="form-control" name="body" rows="3">{{ old('body') }}</textarea>
                         </div>
                   </div>
                   {{ csrf_field() }}

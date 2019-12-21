@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Food;
+use Illuminate\Support\Facades\Auth;
+
 class FoodController extends Controller
 {
     //
@@ -14,8 +17,17 @@ class FoodController extends Controller
     
     //?
     public function create(Request $request)
-    {   
-        return redirect('food.create');
+    { 
+        $this->validate($request, Food::$rules);
+        $food = new Food;
+        $form = $request->all();
+        
+        $food->user_id = Auth::id();
+        
+        $food->fill($form);
+        $food->save();
+        
+        return redirect('food/exist');
     }
     public function exist()
     {
