@@ -29,8 +29,17 @@ class FoodController extends Controller
         
         return redirect('food/exist');
     }
-    public function exist()
+    //12/22実装
+    public function exist(Request $request)
     {
-        return view('food.exist');
+        //FoodはFoodsになるかも？
+        $cond_name = $request->cond_name;
+        if($cond_name !='') {
+            $posts = Food::where('name', $cond_name)->get();
+        } else {
+            $posts = Food::all();
+        }
+        
+        return view('food.exist',['posts' =>$posts, 'cond_name' => $cond_name]);
     }
 }

@@ -146,10 +146,10 @@ return [
     */
 
     'attributes' => [
-        'name' => '食品名',
+        'name' => '食材名',
         'limit_date' => '賞味期限',
         'purchase_date' => '購入日',
-        'body' => 'メモ',
+        'body' => 'メモ'
         ],
 
 ];

@@ -20,7 +20,7 @@
                   @endif
                   {{-- 表示部分 --}}
                   <div class="form-group row">
-                        <label class="col-md-2">食品名</label>
+                        <label class="col-md-2">食材名</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                         </div>
