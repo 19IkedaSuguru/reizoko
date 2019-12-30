@@ -53,6 +53,7 @@ class FoodController extends Controller
     return view('food.edit', ['food_form' => $food ]);
         
     }
+    //編集後food/existに戻る
     public function update(Request $request)
     {
         $this->validate($request, food::$rules);
@@ -66,5 +67,13 @@ class FoodController extends Controller
         
         return redirect('food/exist');
         
+    }
+    //削除する
+    public function delete(Request $request)
+    {
+        $food = Food::find($request->id);
+        //削除し、一覧（exist）に戻る
+        $food->delete();
+        return redirect('food/exist');
     }
 }

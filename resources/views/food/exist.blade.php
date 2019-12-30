@@ -9,7 +9,7 @@
             <h2>食材一覧画面</h2>
        </div>
        <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-2">
              <a href="{{ action('FoodController@add') }}" role="button" class="btn btn-primary">新規購入</a>
           </div>
           <div class="col-md-8">
@@ -17,7 +17,7 @@
                 <div class ="form-group row">
                    <label class="col-md-2">保有食材</label>
                    <div class="col-md-8">
-                      <input type="text" class="form-control" name="cond_name" value"{{ $cond_name }}">
+                      <input type="text" class="form-control" name="cond_name" value="{{ $cond_name }}">
                    </div>
                    <div class="col-md-2">
                       {{ csrf_field() }}
@@ -28,7 +28,7 @@
            </div>
        </div>
        <div class="row">
-          <div class="list-news col-md-12 mx-auto">
+          <div class="list-news col-md-20 mx-auto">
              <div class="row">
                 <table class="tabel tabel-dark">
                    <thead>
@@ -44,13 +44,16 @@
                        @foreach($posts as $food)
                          <tr>
                              <th>{{ $food->id }}</th>
-                             <td>{{ \Str::limit($food->name, 12) }}</td>
+                             <td>{{ \Str::limit($food->name, 15) }}</td>
                              <td>{{ \Str::limit($food->limit_date, 10) }}</td>
                              <td>{{ \Str::limit($food->purchase_date, 10) }}</td>
-                             <td>{{ \Str::limit($food->body, 15 ) }}</td>
+                             <td>{{ \Str::limit($food->body, 40 ) }}</td>
                              <td>
                                  <div>
                                      <a href="{{ action('FoodController@edit', ['id' => $food->id]) }}">編集</a>
+                                 </div>
+                                 <div>
+                                     <a href="{{ action('FoodController@delete', ['id' => $food->id]) }}">削除</a>
                                  </div>
                              </td>
                          </tr>
