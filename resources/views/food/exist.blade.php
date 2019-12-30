@@ -48,6 +48,11 @@
                              <td>{{ \Str::limit($food->limit_date, 10) }}</td>
                              <td>{{ \Str::limit($food->purchase_date, 10) }}</td>
                              <td>{{ \Str::limit($food->body, 15 ) }}</td>
+                             <td>
+                                 <div>
+                                     <a href="{{ action('FoodController@edit', ['id' => $food->id]) }}">編集</a>
+                                 </div>
+                             </td>
                          </tr>
                        @endforeach
                    </tbody>

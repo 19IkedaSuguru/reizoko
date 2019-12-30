@@ -42,4 +42,29 @@ class FoodController extends Controller
         
         return view('food.exist',['posts' =>$posts, 'cond_name' => $cond_name]);
     }
+    
+    //編集
+    public function edit(Request $request)
+    {
+        $food = Food::find($request->id);
+        if (empty($food)) {
+            abort(404);
+        }
+    return view('food.edit', ['food_form' => $food ]);
+        
+    }
+    public function update(Request $request)
+    {
+        $this->validate($request, food::$rules);
+        
+        $food = food::find($request->id);
+        
+        $food_form = $request->all();
+        unset($food_form[ '_token' ]);
+        
+        $food->fill($food_form)->save();
+        
+        return redirect('food/exist');
+        
+    }
 }

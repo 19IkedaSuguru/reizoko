@@ -23,6 +23,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('food/save', 'FoodController@add');
     Route::post('food/save', 'FoodController@create');
     Route::get('food/exist', 'FoodController@exist');
+    Route::get('food/edit', 'FoodController@edit');
+    Route::post('food/edit', 'FoodController@update');
 });
 
 Auth::routes();
